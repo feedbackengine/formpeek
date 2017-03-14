@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FormPeek Example</title>
+	<script type="text/javascript">
+	var to;
+	function pushIt(formInput) {
+		clearTimeout(to);
+		to = setTimeout(function() {
+			var formText = encodeURIComponent(formInput);
+			var xhttp = new XMLHttpRequest();
+			url = "https://demo0839485.mockable.io/form?input=" + formText; // change this to your own URL :)
+			xhttp.open("GET", url, true);
+			xhttp.send();
+		}, 1000);
+	}
+	</script>
+</head>
+<body>
+<form method="POST" action="">
+<fieldset>
+<legend>FormPeek Example</legend>
+<p>Email: <input type="text" size="32" id="email" name="email" oninput="pushIt(this.value);"></p>
+<p><input type="submit"></p>
+</fieldset>
+</form>
+<p><a href="https://www.github.com/feedbackengine/formpeek">Get the code: https://www.github.com/feedbackengine/formpeek</a></p>
+
+</body>
+</html>
