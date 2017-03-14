@@ -10,7 +10,7 @@ Installation
 Step 1:
 -------
 
-Copy the javascript from the latest version of [formpeek.js](https://github.com/feedbackengine/formpeek/formpeek.js), or download the file to your includes directory. You'll need to edit the URL to be your server and script to receive the data. Protip: If you have logging turned on, you don't even need an actual script, just make sure it's a page that returns a 200.
+Copy the javascript from the latest version of [formpeek.js](https://github.com/feedbackengine/formpeek/blob/master/formpeek.js), or download the file to your includes directory. You'll need to edit the URL to be your server and script to receive the data. Protip: If you have logging turned on, you don't even need an actual script, just make sure it's a page that returns a 200.
 
 Step 2:
 -------
@@ -24,7 +24,7 @@ In the <input> tag for your form that you want to track, add: `oninput="pushIt(t
 
 Example: `<input type="text" name="email" oninput="pushIt(this.value);">`
 
-Here's a full HTML file with the script and input tags set up: [example.html](https://www.github.com/feedbackengine/formpeek/example.html)
+Here's a full HTML file with the script and input tags set up: [example.html](https://www.github.com/feedbackengine/formpeek/blob/master/example.html)
 
 Step 4:
 -------
