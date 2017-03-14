@@ -2,7 +2,7 @@ FormPeek
 ========
 We at [FeedbackEngine.Com](https://www.feedbackengine.com) wanted to see where users were struggling or bouncing from our signup and setup process, but didn't want to implement an expensive and complicated service that has tons of other features we didn't necessarily want or need.
 
-So like any good developer, we built our own solution. Enter FormPeek: simple, handy, and (now) open source. We tried to make FormPeek easier to use, but literally couldn't. It's pretty damn simple. All you need to do is drop the JavaScript code in to the <head> of your page. Maybe the only thing we could have done is put the code on a CDN for you. If this ends up being popular, we'll work on that. :)
+So like any good developer, we built our own solution. Enter FormPeek: simple, handy, and (now) open source. We tried to make FormPeek easier to use, but literally couldn't. It's pretty damn simple. All you need to do is drop the JavaScript code in to the `<head>` of your page. Maybe the only thing we could have done is put the code on a CDN for you. If this ends up being popular, we'll work on that. :)
 
 Installation
 ============
@@ -17,18 +17,18 @@ Step 2: Install The Code
 
 Edit the URL in the JavaScript code to be your target to receive the data. Protip: If you have request logging enabled on your server, you don't even need an actual script, just make sure you point it to a page that returns a 200.
 
-Once you've updated the URL to be your own target URL, paste the formpeek.js javascript including the <script> and </script> in to your html file with the form field between the <head> and </head> tags, or if you've added the edited formpeek.js to your directory, just add <script src="/path/to/your/formpeek.js"> in to the <head> section of your HTML file. We recommend the src method to keep your html cleaner, but whichever model you prefer will work.
+Once you've updated the URL to be your own target URL, paste the formpeek.js javascript including the `<script>` and `</script>` in to your html file with the form field between the `<head>` and `</head>` tags, or if you've added the edited formpeek.js to your directory, just add `<script src="/path/to/your/formpeek.js">` in to the `<head>` section of your HTML file. We recommend the src method to keep your html cleaner, but whichever model you prefer will work.
 
 Step 3: Add FormPeek To Your Form Field(s)
 -------
 
-In the <input> tag for your form that you want to track, add: `oninput="pushIt(this.value);"`
+In the `<input>` tag for your form that you want to track, add: `oninput="pushIt(this.value);"`
 
 Example: `<input type="text" name="email" oninput="pushIt(this.value);">`
 
 Here's a full HTML file with the script and input tags set up: [example.html](https://www.github.com/feedbackengine/formpeek/blob/master/example.html)
 
-***Warning***: If you have a lot of users or traffic, this may send more data to your target URL than you expect. You'll see a GET request every 1 second while a user is typing in your FormPeek-enabled form fields. You can edit the timer to be whatever you want-- we have the default set to 1000ms, which was perfect for our use case.
+***Warning***: If you have a lot of users or traffic, this may send more requests to your target URL than you expect. You'll see a GET request every 1 second while a user is typing in your FormPeek-enabled form fields. You can edit the timer to be whatever you want-- we have the default set to 1000ms, which was perfect for our use case.
 
 Step 4:
 -------
