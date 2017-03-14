@@ -1,6 +1,8 @@
 FormPeek
 ========
-We at [FeedbackEngine.Com](https://www.feedbackengine.com) wanted to see where users were struggling or bouncing from our signup and setup process, but didn't want to implement an expensive and complicated service that has tons of other features we didn't necessarily want or need.
+FormPeek shows you what your users/visitors are typing in to form fields, without them having to click a submit button. Even if they delete what they started typing, you can still see what they had typed before they hit the backspace button.
+
+At [FeedbackEngine.Com](https://www.feedbackengine.com) we wanted to see where our users were struggling or bouncing from our signup and setup process, but didn't want to implement an expensive and complicated service that has tons of other features we didn't necessarily want or need. All we wanted to see was what our users were typing, but not submitting, in our form input text fields.
 
 So like any good developer, we built our own solution. Enter FormPeek: simple, handy, and (now) open source. We tried to make FormPeek easier to use, but literally couldn't. It's pretty damn simple. All you need to do is drop the JavaScript code in to the `<head>` of your page. Maybe the only thing we could have done is put the code on a CDN for you. If this ends up being popular, we'll work on that. :)
 
