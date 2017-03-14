@@ -1,23 +1,25 @@
 FormPeek
 ========
-We at [FeedbackEngine.Com](https://www.feedbackengine.com) wanted to see where users were struggling or bouncing from our signup and setup process, and didn't want to implement an expensive and complicated service that has hundreds of other features we didn't need.
+We at [FeedbackEngine.Com](https://www.feedbackengine.com) wanted to see where users were struggling or bouncing from our signup and setup process, but didn't want to implement an expensive and complicated service that has tons of other features we didn't necessarily want or need.
 
-Enter FormPeek. We tried to make it easier to use, but couldn't. It's pretty damn simple. All you need to do is drop the JavaScript code in to the <head> of your page.
+So like any good developer, we built our own solution. Enter FormPeek: simple, handy, and (now) open source. We tried to make FormPeek easier to use, but literally couldn't. It's pretty damn simple. All you need to do is drop the JavaScript code in to the <head> of your page. Maybe the only thing we could have done is put the code on a CDN for you. If this ends up being popular, we'll work on that. :)
 
 Installation
 ============
 
-Step 1:
+Step 1: Grab The Code
 -------
 
-Copy the javascript from the latest version of [formpeek.js](https://github.com/feedbackengine/formpeek/blob/master/formpeek.js), or download the file to your includes directory. You'll need to edit the URL to be your server and script to receive the data. Protip: If you have logging turned on, you don't even need an actual script, just make sure it's a page that returns a 200.
+Copy the javascript from the latest version of [formpeek.js](https://github.com/feedbackengine/formpeek/blob/master/formpeek.js), or (better yet) download the file to whatever directory you put these kind of files in. 
 
-Step 2:
+Step 2: Install The Code
 -------
 
-Paste the formpeek.js javascript including the <script> and </script> in to your html file with the form field between the <head> and </head> tags, or if you've added formpeek.js to your directory, just add <script src="/path/to/formpeek.js"> in to the <head> section. We recommend the src method to keep your html cleaner.
+Edit the URL in the JavaScript code to be your target to receive the data. Protip: If you have request logging enabled on your server, you don't even need an actual script, just make sure you point it to a page that returns a 200.
 
-Step 3:
+Once you've updated the URL to be your own target URL, paste the formpeek.js javascript including the <script> and </script> in to your html file with the form field between the <head> and </head> tags, or if you've added the edited formpeek.js to your directory, just add <script src="/path/to/your/formpeek.js"> in to the <head> section of your HTML file. We recommend the src method to keep your html cleaner, but whichever model you prefer will work.
+
+Step 3: Add FormPeek To Your Form Field(s)
 -------
 
 In the <input> tag for your form that you want to track, add: `oninput="pushIt(this.value);"`
@@ -26,10 +28,12 @@ Example: `<input type="text" name="email" oninput="pushIt(this.value);">`
 
 Here's a full HTML file with the script and input tags set up: [example.html](https://www.github.com/feedbackengine/formpeek/blob/master/example.html)
 
+***Warning***: If you have a lot of users or traffic, this may send more data to your target URL than you expect. You'll see a GET request every 1 second while a user is typing in your FormPeek-enabled form fields. You can edit the timer to be whatever you want-- we have the default set to 1000ms, which was perfect for our use case.
+
 Step 4:
 -------
 
-Refresh the page in your browser and give it a try. Type some characters in to the field you've formpeek-enabled. After a 1000ms (1 second) delay, formpeek will "fire" and send whatever you've typed off to the URL you specified. It will show up as a HTTP "GET" request this in your server log files:
+Refresh the page in your browser and give it a try. Type some characters in to the field you've formpeek-enabled. After a (configurable) 1000ms (1 second) delay, formpeek will "fire" and send whatever you've typed off to the URL you specified. It will show up as a HTTP "GET" request this in your server log files:
 
 /your/specified/page?input=WhateverYouTypedInTheForm
 
