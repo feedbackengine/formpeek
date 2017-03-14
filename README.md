@@ -34,3 +34,13 @@ Refresh the page in your browser and give it a try. Type some characters in to t
 /your/specified/page?input=WhateverYouTypedInTheForm
 
 You can also create an actual script that accepts the input and does something interesting with it, like put it in a database, log it to a file, push it to slack-- whatever you want. That's what we did at [FeedbackEngine](https://www.feedbackengine.com) so we could better analyze and report on the data to improve the experience for our users.
+
+Browser Compatibility:
+-------
+
+Note that we purposely didn't use Fetch because it is limited to more modern browser versions, and there is no reliance on any other libraries-- so while we haven't tested on every possible browser, you should expect this to work pretty well cross platform.
+
+Contribute
+-------
+
+We'd love you to contribute. Send us a pull request!
